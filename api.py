@@ -1,8 +1,9 @@
 from flask import Flask, jsonify
 import requests
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)  # CORS-u aktivləşdiririk
+    
 @app.route('/professions', methods=['GET'])
 def get_professions():
     url = "https://vet.edu.gov.az/professions/specialty/list?start=0&length=1291"
